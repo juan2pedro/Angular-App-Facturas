@@ -1,2 +1,15 @@
 <h2>{{title}}</h2>
-<div>{{users}}</div>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; index as i">
+      <td>{{i++1}}</td>
+      <td>{{user}}</td>
+    </tr>
+  </tbody>
+</table>
