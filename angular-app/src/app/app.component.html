@@ -1,5 +1,11 @@
-<h2>{{title}}</h2>
-<table *ngIf="(users != undefined && users.length > 0) else isEmpty">
+<div *ngIf="visible; else notEnable">
+  <h2>{{title}}</h2>
+</div>
+<button (click)="setVisible()">
+  {{visible? 'Ocultar' : 'Mostrar'}}
+</button>
+<div *ngIf="visible">
+  <table *ngIf="(users != undefined && users.length > 0) else isEmpty">
   <thead>
     <tr>
       <th>id</th>
@@ -15,4 +21,9 @@
 </table>
 <ng-template #isEmpty>
   <p> Lista de usuarios no encontrada</p>
+</ng-template>
+</div>
+
+<ng-template #notEnable>
+  <h2>La lista de usuarios está desactivada</h2>
 </ng-template>
