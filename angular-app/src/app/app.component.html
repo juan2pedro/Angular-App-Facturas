@@ -1,5 +1,5 @@
 <h2>{{title}}</h2>
-<table>
+<table *ngIf="(users != undefined && users.length > 0) else isEmpty">
   <thead>
     <tr>
       <th>id</th>
@@ -13,3 +13,6 @@
     </tr>
   </tbody>
 </table>
+<ng-template #isEmpty>
+  <p> Lista de usuarios no encontrada</p>
+</ng-template>
