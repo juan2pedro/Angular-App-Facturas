@@ -1,2 +1,2 @@
 # Anuglar-y-Spring-Boot-App
-Cuso de udemyu creando una webapp Full Stack
+Cuso de udemy creando una webapp Full Stack
