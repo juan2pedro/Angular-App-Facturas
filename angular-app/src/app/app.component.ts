@@ -11,4 +11,5 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title:string = 'Hola mundo Angular!';
+  users:string[]= ['Pepe', 'María', 'Juan', 'Andres'];
 }
