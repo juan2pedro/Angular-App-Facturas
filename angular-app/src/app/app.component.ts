@@ -11,8 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title:string = 'Hola mundo Angular!';
-    users:string[]= ['Pepe', 'María', 'Juan', 'Andres'];
-  // users:string[]= [];
+    // users:string[]= ['Pepe', 'María', 'Juan', 'Andres'];
+   users:string[]= [];
   visible:boolean = false;
   setVisible():void{
     this.visible = this.visible? false : true;
