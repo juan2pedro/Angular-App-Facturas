@@ -12,7 +12,9 @@ import { CounterComponent } from "./counter/counter.component";
 })
 export class AppComponent {
   title:string = 'Hola mundo Angular!';
-    users:string[]= ['Pepe', 'María', 'Juan', 'Andres'];
+  subTitle:string = 'Contador con estado de sesion';
+
+  users:string[]= ['Pepe', 'María', 'Juan', 'Andres'];
   // users:string[]= [];
   visible:boolean = false;
   setVisible():void{
