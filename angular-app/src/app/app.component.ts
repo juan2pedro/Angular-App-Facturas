@@ -17,8 +17,13 @@ export class AppComponent {
   users:string[]= ['Pepe', 'María', 'Juan', 'Andres'];
   // users:string[]= [];
   visible:boolean = false;
+
+  counter!:number;
   setVisible():void{
     this.visible = this.visible? false : true;
     console.log('Click');
+  }
+  setCounter(counter:number):void{
+    this.counter = counter
   }
 }
