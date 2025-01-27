@@ -9,4 +9,6 @@ export class Invoice{
   company!:Company;
   items!:Item[];
 
+  total!:number;
+
 }
