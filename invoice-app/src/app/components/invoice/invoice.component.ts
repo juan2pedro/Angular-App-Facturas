@@ -23,6 +23,6 @@ export class InvoiceComponent implements OnInit {
     this.invoice = this.service.getInvoice();
   }
   removeItem(id:number){
-    this.invoice.items = this.invoice.items.filter(item=>item.id != id );
+    this.invoice = this.service.remove(id);
   }
 }
