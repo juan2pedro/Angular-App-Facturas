@@ -4,8 +4,10 @@ import { Component, Input } from '@angular/core';
   selector: 'total',
   standalone: true,
   imports: [],
-  templateUrl: './total.component.html',
+  templateUrl: './total.component.html'
 })
 export class TotalComponent {
+
   @Input() total: number = 0;
+
 }
