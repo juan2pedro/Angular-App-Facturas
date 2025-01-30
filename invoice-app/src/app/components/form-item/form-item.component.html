@@ -1,6 +1,37 @@
-<form class="w-50" (ngSubmit)="onSubmit()">
-  <input name="product" placeholder="product" class="form-control m-3" [(ngModel)]="item.product">
-  <input name="price" placeholder="price" class="form-control m-3" [(ngModel)]="item.price">
-  <input name="quantity" placeholder="quantity" class="form-control m-3" [(ngModel)]="item.quantity">
-  <button class="btn btn-primary m-3">Añadir</button>
+<form class="w-50" (ngSubmit)="onSubmit(itemForm)" #itemForm="ngForm">
+  <input name="product" placeholder="product" class="form-control m-3" [(ngModel)]="item.product" required minlength="5"
+    #product="ngModel">
+
+  @if(product.invalid && (product.dirty || product.touched)){
+  @if(product.errors!['required']){
+  <div class="text-danger"> El nombre del producto es requerido</div>
+  }
+  @if(product.errors!['minlength']){
+  <div class="text-danger"> faltan caracteres</div>
+  }
+  }
+
+  <input name="price" placeholder="price" class="form-control m-3" [(ngModel)]="item.price" required minlength="1"
+    #price="ngModel">
+  @if(price.invalid && (price.dirty || price.touched)){
+  @if(price.errors!['required']){
+  <div class="text-danger"> El price del producto es requerido</div>
+  }
+  @if(price.errors!['minlength']){
+  <div class="text-danger"> faltan caracteres</div>
+  }
+  }
+
+  <input name="quantity" placeholder="quantity" class="form-control m-3" [(ngModel)]="item.quantity " required
+    minlength="1" #quantity="ngModel">
+  @if(quantity.invalid && (quantity.dirty || quantity.touched)){
+  @if(quantity.errors!['required']){
+  <div class="text-danger"> El quantity del producto es requerido</div>
+  }
+  @if(quantity.errors!['minlength']){
+  <div class="text-danger"> faltan caracteres</div>
+  }
+  }
+
+  <button class="btn btn-primary m-3" [disabled]="itemForm.invalid">Añadir</button>
 </form>
